@@ -433,7 +433,7 @@ function Main {
     if ( !($patchDUInstance.DoPatch())) { CleanupWhenFail; return }
     if ( !($patchFODInstance.DoPatch())) { CleanupWhenFail; return }
     if ( !($patchLPInstance.DoPatch())) { CleanupWhenFail; return }
-    #if ( !(CleanAndAssembleMedia $dstInstallWimPath $winREPath $bootWimPath) ) { CleanupWhenFail; return }
+    if ( !(CleanAndAssembleMedia $dstInstallWimPath $winREPath $bootWimPath) ) { CleanupWhenFail; return }
     SplitInstallWim $dstInstallWimPath $wimSize
  
     Out-Log "Refresh Media Success!"
